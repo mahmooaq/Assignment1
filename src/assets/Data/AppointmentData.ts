@@ -1,6 +1,6 @@
 import Appointment from "src/app/Appointment"
 
-export const appointment: Appointment[]=[
+export const AppointmentData: Appointment[]=[
     {
         appDate: new Date(2022,2,3),        
         appTime :{hours: 1, minutes: 45},

@@ -14,50 +14,49 @@
   </ion-header>
 
   <app-header></app-header>
- 
+
   <!--Blue box-->
-  <ion-card color="success">  
-   
+  <ion-card color="success">
+
     <ion-input>
-        Agent ID:
+      Agent ID:
     </ion-input>
 
-      <ion-button>
-          Load Appointment
-      </ion-button>
+    <ion-button (click)="loadAppointment()">
+      Load Appointment
+    </ion-button>
 
-      <ion-button>
-          Book Appointment
-      </ion-button>    
+    <ion-button>
+      Book Appointment
+    </ion-button>
   </ion-card>
-  
+
   <!--Pink colour-->
   <ion-card color="danger">
     <br>
-      <h4>Delete Appointment</h4>
-      <br><br>
-      <ion-button>
-          Confirm Deletetion
-      </ion-button>
+    <h4>Delete Appointment</h4>
+    <br><br>
+    <ion-button>
+      Confirm Deletetion
+    </ion-button>
   </ion-card>
 
-  <ion-card color="warning">
-      <br>
-      <ion-row>
-        Key: <br>
-
-     <ion-button>
-        Delete
+  <ion-card color="warning" *ngFor="let index = index; let app of appList;">
+    <br>
+    <ion-button>
+      Delete
     </ion-button>
-      
+    <ion-row>
+      Key: {{index}}<br>
     </ion-row>
-      
-      Date: <br>
-      OHIP: <br>
-      Email: <br>
-      Phone: <br>
-      Agent: <br> <br>
-      
+
+    Date: {{app.appDate | date}}<br>
+    <!-- Time: {{app.appTime |time }}<br>  -->
+    OHIP: {{app.appOHIP}}<br>
+    Email: {{app.appEmail}} <br>
+    Phone: {{app.appPhone}}<br>
+    Agent: {{app.appAgent}}<br> <br>
+
   </ion-card>
 
 
