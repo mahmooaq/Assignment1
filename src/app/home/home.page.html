@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      COVID-19 Vaccine Appointment
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,59 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="medium">COVID-19 Vaccine Appointment</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <app-header></app-header>
+ 
+  <!--Blue box-->
+  <ion-card color="success">  
+   
+    <ion-input>
+        Agent ID:
+    </ion-input>
+
+      <ion-button>
+          Load Appointment
+      </ion-button>
+
+      <ion-button>
+          Book Appointment
+      </ion-button>    
+  </ion-card>
+  
+  <!--Pink colour-->
+  <ion-card color="danger">
+    <br>
+      <h4>Delete Appointment</h4>
+      <br><br>
+      <ion-button>
+          Confirm Deletetion
+      </ion-button>
+  </ion-card>
+
+  <ion-card color="warning">
+      <br>
+      <ion-row>
+        Key: <br>
+
+     <ion-button>
+        Delete
+    </ion-button>
+      
+    </ion-row>
+      
+      Date: <br>
+      OHIP: <br>
+      Email: <br>
+      Phone: <br>
+      Agent: <br> <br>
+      
+  </ion-card>
+
+
+  <app-footer></app-footer>
+
+
 </ion-content>

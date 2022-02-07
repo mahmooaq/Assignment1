@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>AppointmentBooking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+      <app-header></app-header>
+      <ion-card color="primary">
+          Agent ID: 
+      </ion-card>
+      
+      <ion-card color="warning">
+            <form>
+                <ion-label>
+                    Date:
+                </ion-label>
+                <ion-input type="date" ></ion-input>
+                <br>
+                <ion-label>
+                    Time:
+                </ion-label>
+                <ion-input placeholder="Time" type="Time" ></ion-input>
+                <br>
+
+                <ion-label>
+                  OHIP:
+              </ion-label>
+              <ion-input placeholder="ohip" type="number"></ion-input>
+              <br>
+
+              <ion-label>
+                Email
+            </ion-label>
+            <ion-input placeholder="Email" type="Email"></ion-input>
+            <br>
+
+            <ion-label>
+              Phone Number:
+          </ion-label>
+          <ion-input placeholder="phone number" type="phone"></ion-input>
+          <br>
+
+              </form>
+      </ion-card>
+
+      <ion-button>
+          Add Appointment
+      </ion-button>
+
+      <app-footer></app-footer>
+
+
+</ion-content>

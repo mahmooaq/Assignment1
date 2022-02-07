@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'appointment-booking',
+    loadChildren: () => import('./pages/appointment-booking/appointment-booking.module').then( m => m.AppointmentBookingPageModule)
+  },
 ];
 
 @NgModule({
