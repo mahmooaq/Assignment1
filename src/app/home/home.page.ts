@@ -10,6 +10,7 @@ import { DataServiceService } from '../data-service.service';
 export class HomePage {
 
   appList: Appointment[]
+  deletedAppointment: Appointment
 
   constructor(private dataService: DataServiceService) {
     
@@ -21,11 +22,16 @@ export class HomePage {
   loadAppointment() {
     this.dataService.loadDataToLS()
     this.appList = this.dataService.fetchDataFromLS()
-    console.log(this.appList + "this is coming from appList")
-    console.log("this is coming from fetch data from LS", this.dataService.fetchDataFromLS());
+    // console.log(this.appList + "this is coming from appList")
+    // console.log("this is coming from fetch data from LS", this.dataService.fetchDataFromLS());
     
   }
-
+  // confirming the appointment to be deleted
+  confirmToDeleteAppt(index:any){
+    this.deletedAppointment.appEmail = this.dataService.findItemToDelete(index)
+    console.log("This is coming from homepagets confirm to be delete")
+    
+  }
 
   
 }

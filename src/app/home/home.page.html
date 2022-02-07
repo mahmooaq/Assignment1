@@ -43,7 +43,7 @@
 
   <ion-card color="warning" *ngFor="let index = index; let app of appList;">
     <br>
-    <ion-button>
+    <ion-button (click)="confirmToDeleteAppt(app.appEmail)">
       Delete
     </ion-button>
     <ion-row>
@@ -58,8 +58,6 @@
     Agent: {{app.appAgent}}<br> <br>
 
   </ion-card>
-
-
   <app-footer></app-footer>
 
 

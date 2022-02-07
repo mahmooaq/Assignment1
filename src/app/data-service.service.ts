@@ -36,6 +36,17 @@ export class DataServiceService {
   }
 
   //Delete Data from LS
+  removeData(key:string) {
+      localStorage.removeItem(key);
+  } 
+  
+  //find an appointment to delete from the list
+  findItemToDelete(index:any){
+      return JSON.parse(localStorage.getItem(localStorage.key(index)))
+     
+      
+  }
+  
 
   //Add Data to LS
 
