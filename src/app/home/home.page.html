@@ -18,7 +18,7 @@
   <!--Blue box-->
   <ion-card color="success">
 
-    <ion-input>
+    <ion-input [(ngModel)] = "appAgent">
       Agent ID:
     </ion-input>
 
@@ -26,19 +26,24 @@
       Load Appointment
     </ion-button>
 
-    <ion-button>
+    <ion-button [routerLink] = "['/appointment-booking', appAgent]" [disabled] = "!appAgent">
       Book Appointment
     </ion-button>
   </ion-card>
 
   <!--Pink colour-->
-  <ion-card color="danger">
+  <ion-card color="danger" *ngIf = "flag">
     <br>
     <h4>Delete Appointment</h4>
     <br><br>
-    <ion-button>
-      Confirm Deletetion
+    
+    <ion-button (click) ="delete(emailID)">
+      Confirm Deletetion : {{emailID}}
     </ion-button>
+    <ion-button (click) = "cancel()">
+      Cancel Deletion 
+    </ion-button>
+    
   </ion-card>
 
   <ion-card color="warning" *ngFor="let index = index; let app of appList;">

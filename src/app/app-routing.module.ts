@@ -12,7 +12,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'appointment-booking',
+    path: 'appointment-booking/:appAgent',
     loadChildren: () => import('./pages/appointment-booking/appointment-booking.module').then( m => m.AppointmentBookingPageModule)
   },
 ];

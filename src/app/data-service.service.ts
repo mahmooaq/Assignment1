@@ -40,17 +40,10 @@ export class DataServiceService {
       localStorage.removeItem(key);
   } 
   
-  //find an appointment to delete from the list
-  findItemToDelete(index:any){
-      return JSON.parse(localStorage.getItem(localStorage.key(index)))
-     
-      
-  }
-  
-
   //Add Data to LS
-
-
+  addDataToLS(app: Appointment){
+    localStorage.setItem(app.appEmail, JSON.stringify(app))
+  }
 
 
 }

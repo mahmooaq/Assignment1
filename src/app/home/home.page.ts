@@ -11,6 +11,9 @@ export class HomePage {
 
   appList: Appointment[]
   deletedAppointment: Appointment
+  emailID: string
+  flag: boolean = false
+  appAgent: string
 
   constructor(private dataService: DataServiceService) {
     
@@ -27,10 +30,25 @@ export class HomePage {
     
   }
   // confirming the appointment to be deleted
-  confirmToDeleteAppt(index:any){
-    this.deletedAppointment.appEmail = this.dataService.findItemToDelete(index)
-    console.log("This is coming from homepagets confirm to be delete")
-    
+  confirmToDeleteAppt(index:string){
+    console.log(index, "this is the confrim delete appt")
+    this.emailID = index
+    this.flag = true
+  }
+
+  delete(emailID){
+      this.dataService.removeData(emailID)
+      console.log("email id deleted", emailID);    
+      
+      this.appList = this.dataService.fetchDataFromLS()  
+      console.log("Deleted");    
+      this.flag = false
+      
+  }
+  cancel(){
+    this.emailID = ""
+    this.flag = false
+
   }
 
   

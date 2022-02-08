@@ -7,44 +7,44 @@
 <ion-content>
       <app-header></app-header>
       <ion-card color="primary">
-          Agent ID: 
+          Agent ID: {{appAgent}}
       </ion-card>
       
       <ion-card color="warning">
-            <form>
+            
                 <ion-label>
                     Date:
                 </ion-label>
-                <ion-input type="date" ></ion-input>
+                <ion-input type="date" [(ngModel)]="appDate"></ion-input>
                 <br>
                 <ion-label>
                     Time:
                 </ion-label>
-                <ion-input placeholder="Time" type="Time" ></ion-input>
+                <ion-input placeholder="Time" type="time" [(ngModel)]="appTime"></ion-input>
                 <br>
 
                 <ion-label>
                   OHIP:
               </ion-label>
-              <ion-input placeholder="ohip" type="number"></ion-input>
+              <ion-input placeholder="ohip" type="number" [(ngModel)]="appOHIP"></ion-input>
               <br>
 
               <ion-label>
                 Email
             </ion-label>
-            <ion-input placeholder="Email" type="Email"></ion-input>
+            <ion-input placeholder="Email" type="Email" [(ngModel)]="appEmail"></ion-input>
             <br>
 
             <ion-label>
               Phone Number:
           </ion-label>
-          <ion-input placeholder="phone number" type="phone"></ion-input>
+          <ion-input placeholder="phone number" type="phone" [(ngModel)]="appPhone"></ion-input>
           <br>
 
-              </form>
+              
       </ion-card>
 
-      <ion-button>
+      <ion-button (click)="appointmentAdd()" [routerLink] = "['/home']">
           Add Appointment
       </ion-button>
 
