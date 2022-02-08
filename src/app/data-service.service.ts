@@ -16,7 +16,7 @@ export class DataServiceService {
   loadDataToLS(){
     
     for (let index = 0; index < AppointmentData.length; index++) {
-        localStorage.setItem(this.AppointmentData[index].appEmail,JSON.stringify(this.AppointmentData[index]))
+        localStorage.setItem(this.AppointmentData[index].appOHIP + "",JSON.stringify(this.AppointmentData[index]))
     }
   }
 
@@ -42,7 +42,7 @@ export class DataServiceService {
   
   //Add Data to LS
   addDataToLS(app: Appointment){
-    localStorage.setItem(app.appEmail, JSON.stringify(app))
+    localStorage.setItem(app.appOHIP + "", JSON.stringify(app))
   }
 
 

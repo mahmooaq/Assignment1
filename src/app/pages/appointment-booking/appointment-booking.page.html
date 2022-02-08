@@ -44,7 +44,7 @@
               
       </ion-card>
 
-      <ion-button (click)="appointmentAdd()" [routerLink] = "['/home']">
+      <ion-button (click)="appointmentAdd()" [routerLink] = "['/home']" [disabled]="!appOHIP">
           Add Appointment
       </ion-button>
 
